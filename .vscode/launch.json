@@ -2,6 +2,19 @@
     "version": "0.2.0",
     "configurations": [
       {
+        "/workspaces/codespaces-nextjs/node_modules/.bin/electron"     "name": "Electron Main",
+        "program": "${workspaceFolder}/main.js",
+        "request": "launch",
+        "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
+        "skipFiles": [
+          "<node_internals>/**"
+        ],
+        "type": "node"
+      },Run application (codespaces-nextjs
+      ): npm [10217]
+      next [10328]
+      start-server.js [10377]
+      {
         "name": "Run application",
         "type": "node",
         "request": "launch",
