@@ -1,7 +1,7 @@
 {
     "version": "0.2.0",
     "configurations": [
-      {
+      {https://dev.patooworld.com/workspaces/codespaces-nextjs/pages/index.js
         "/workspaces/codespaces-nextjs/node_modules/.bin/electron"     "name": "Electron Main",
         "program": "${workspaceFolder}/main.js",
         "request": "launch",
