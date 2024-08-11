@@ -1,13 +1,28 @@
 {
-  "private": true,
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "next": "^13.5.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  }
+    "private": true,
+    "scripts": {
+        "dev": "next",
+        "build": "next build",
+        "start": "next start",
+        "amplify-modelgen": "node amplify/scripts/amplify-modelgen.js",
+        "amplify-push": "node amplify/scripts/amplify-push.js"
+    },
+    "dependencies": {
+        "climate": "^0.2.2",
+        "firebase": "^10.12.5",
+        "for": "^0.0.1-dev.0",
+        "location": "^0.0.1",
+        "nature": "^0.6.2",
+        "next": "^14.2.5",
+        "node": "^22.6.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "search": "^1.0.0",
+        "text": "^0.1.0",
+        "weather": "^1.0.4"
+    },
+    "devDependencies": {
+        "ini": "^1.3.5",
+        "inquirer": "^6.5.1"
+    }
 }
