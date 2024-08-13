@@ -24,5 +24,7 @@
     "devDependencies": {
         "ini": "^1.3.5",
         "inquirer": "^6.5.1"
-    }
+    },
+    "name": "",
+    "version": ""
 }
