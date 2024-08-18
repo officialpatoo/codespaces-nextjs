@@ -1,0 +1,63 @@
+# This AWS SAM template has been generated from your function's configuration. If
+# your function has one or more triggers, note that the AWS resources associated
+# with these triggers aren't fully specified in this template and include
+# placeholder values. Open this template in AWS Application Composer or your
+# favorite IDE and modify it to specify a serverless application with other AWS
+# resources.
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: An AWS Serverless Application Model template describing your function.
+Resources:
+  amplifyd2xwkibvect0jmmaTableManagerCustomProvidbNA8OD1xZzkY:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Description: >-
+        AWS CDK resource provider framework - isComplete
+        (amplify-d2xwkibvect0jm-main-branch-fb6acb10c7/data/amplifyData/AmplifyTableManager/TableManagerCustomProvider)
+      MemorySize: 128
+      Timeout: 900
+      Handler: framework.isComplete
+      Runtime: nodejs18.x
+      Architectures:
+        - x86_64
+      EphemeralStorage:
+        Size: 512
+      Environment:
+        Variables:
+          USER_IS_COMPLETE_FUNCTION_ARN: >-
+            arn:aws:lambda:us-east-1:731825509313:function:amplify-d2xwkibvect0jm-ma-TableManagerIsCompleteHa-dQDPA6Jmc5PO
+          USER_ON_EVENT_FUNCTION_ARN: >-
+            arn:aws:lambda:us-east-1:731825509313:function:amplify-d2xwkibvect0jm-ma-TableManagerOnEventHandl-yHbr0auS764a
+      EventInvokeConfig:
+        MaximumEventAgeInSeconds: 21600
+        MaximumRetryAttempts: 2
+      PackageType: Zip
+      Policies:
+        - Statement:
+            - Action:
+                - lambda:InvokeFunction
+              Resource:
+                - >-
+                  arn:aws:lambda:us-east-1:731825509313:function:amplify-d2xwkibvect0jm-ma-TableManagerOnEventHandl-yHbr0auS764a
+                - >-
+                  arn:aws:lambda:us-east-1:731825509313:function:amplify-d2xwkibvect0jm-ma-TableManagerOnEventHandl-yHbr0auS764a:*
+              Effect: Allow
+            - Action:
+                - lambda:InvokeFunction
+              Resource:
+                - >-
+                  arn:aws:lambda:us-east-1:731825509313:function:amplify-d2xwkibvect0jm-ma-TableManagerIsCompleteHa-dQDPA6Jmc5PO
+                - >-
+                  arn:aws:lambda:us-east-1:731825509313:function:amplify-d2xwkibvect0jm-ma-TableManagerIsCompleteHa-dQDPA6Jmc5PO:*
+              Effect: Allow
+            - Effect: Allow
+              Action:
+                - logs:CreateLogGroup
+                - logs:CreateLogStream
+                - logs:PutLogEvents
+              Resource: '*'
+      SnapStart:
+        ApplyOn: None
+      RuntimeManagementConfig:
+        UpdateRuntimeOn: Auto
