@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+ import { useCallback, useEffect, useState } from 'react'
 import Button from '../components/Button'
 import ClickCount from '../components/ClickCount'
 import styles from '../styles/home.module.css'
@@ -68,4 +68,44 @@ function Home() {
   )
 }
 
-export default Home
+ // Get references to the form elements
+const loginForm = document.getElementById('login-form');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+
+// Add an event listener to the form
+loginForm.addEventListener('submit', (event) => {
+  event.preventDefault(); // Prevent the form from submitting normally
+
+  // Get the values from the input fields
+  const email = emailInput.value;
+  const password = passwordInput.value;
+
+  // Perform client-side validation (optional)
+  if (!email || !password) {
+    alert('Please enter both email and password');
+    return;
+  }
+
+  // Send the login request to the server
+  fetch('/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ email, password })
+  })
+  .then(response => {
+    if (response.ok) {
+      // Login successful, redirect to the dashboard or another page
+      window.location.href = '/dashboard';
+    } else {
+      // Login failed, display an error message
+      alert('Invalid email or password');
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('An error occurred during login');
+  });
+});
